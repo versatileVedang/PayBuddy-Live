@@ -1,0 +1,127 @@
+﻿
+<link href="../../../Content/Checkout.css" rel="stylesheet" />
+<div class="container">
+	<div class="row" style="margin-top:100px" ng-controller="checkOutCtrl" ng-init="initCheckOut(); getBalance();">
+		<div class="panel panel-info">
+			<div class="panel-heading"><span><i class="glyphicon glyphicon-lock"></i></span>  Payment</div>
+			<div class="panel-heading">You Need To pay: <span>&#8377;</span> <span><strong>{{total}}</strong></span></div>
+			<div class="panel-body">
+				<div class="form-group">
+					<div class="row">
+						<div class="col-lg-6">
+							<strong>Payment Type:</strong>
+							<select name="paymentType" ng-model="checkOut.paymentType" class="form-control">
+								<option ng-option value="">Select Payment Method</option>
+								<option ng-option value="33">Card</option>
+								<option ng-option value="34">Paybuddy Balance</option>
+							</select>
+						</div>
+					</div>
+				</div>
+
+				<div ng-if="checkOut.paymentType == 33 ">
+					<div class="row">
+						<div class="col-lg-6">
+							<strong>Select Card</strong>
+							<select id="cardCompany" name="cardCompany" class="form-control" ng-model="checkOut.cardCompany">
+								<option ng-option value="" selected>Select Card</option>
+								<option value="8">Visa</option>
+								<option value="9">MasterCard</option>
+								<option value="10">American Express</option>
+							</select>
+						</div>
+					</div>
+					<br />
+					<div class="form-group">
+						<div class="row">
+							<div class="col-lg-4"><strong>Card Number:</strong></div>
+						</div>
+						<div class="row">
+							<div class="col-lg-6"><input type="text" class="form-control" name="car_number" maxlength="18" value="" ng-model="checkOut.cardNumber" required /></div>
+						</div>
+
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<div class="col-lg-4"><strong>Card CVV:</strong></div>
+						</div>
+						<div class="row">
+							<div class="col-lg-6"><input type="text" class="form-control" name="car_code" maxlength="3" pattern=" \b[0-9]\{3\}\b" ng-model="checkOut.cvv" /></div>
+						</div>
+
+					</div>
+
+					<div class="form-group">
+						<div class="row">
+							<div class="col-lg-6">
+								<strong>Expiration Date</strong>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-3">
+								<select class="form-control" name="" ng-model="checkOut.expMonth">
+									<option value="">Month</option>
+									<option value="12">01</option>
+									<option value="13">02</option>
+									<option value="14">03</option>
+									<option value="15">04</option>
+									<option value="16">05</option>
+									<option value="17">06</option>
+									<option value="18">07</option>
+									<option value="19">08</option>
+									<option value="20">09</option>
+									<option value="21">10</option>
+									<option value="22">11</option>
+									<option value="23">12</option>
+								</select>
+							</div>
+							<div class="col-lg-3 ">
+								<select class="form-control" ng-model="checkOut.expYear">
+									<option value="">Year</option>
+									<option value="24">2018</option>
+									<option value="25">2019</option>
+									<option value="26">2020</option>
+									<option value="27">2021</option>
+									<option value="28">2022</option>
+									<option value="29">2023</option>
+									<option value="30">2024</option>
+									<option value="31">2025</option>
+								</select>
+							</div>
+						</div>
+
+
+						<div class="form-group">
+							<div class="row">
+								<div class="col-lg-12">
+									<ul class="cards">
+										<li class="visa hand">Visa</li>
+										<li class="mastercard hand">MasterCard</li>
+										<li class="amex hand">Amex</li>
+									</ul>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div ng-if="checkOut.paymentType == 34">
+					<div class="form-group">
+						<div class="col-md-12"><strong>Your Balance:</strong></div>
+						<div class="col-md-12"><span><i class="fa fa-inr fa-sm" aria-hidden="true"></i></span> {{balance | number:2}}</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="row">
+						<div class="col-lg-4 col-lg-offset-2">
+							<button type="submit" class="btn btn-success  btn-submit-fix  btn-lg" ng-click="placeOrder(checkOut)"> Place Order</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

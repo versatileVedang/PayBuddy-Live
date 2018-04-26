@@ -1,0 +1,51 @@
+﻿
+<link href="../../../../Content/bootstrap.css" rel="stylesheet" />
+<link href="../../../../Content/Site.css" rel="stylesheet" />
+
+
+<div ng-controller="cartCtrl" ng-init="viewSubCategoryProduct()" style="margin-top:80px;">
+
+    <div class="well-lg">
+        <div class="caption">
+            <div class="row">
+                <div class="col-lg-9 col-md-offset-2 " style="background-color:rgba(9, 41, 20, 0.19); ">
+                    <div class="row">
+                        <div class="col-md-3" id="content" ng-repeat="item in productList.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))" style="margin-left:90px; margin-top:30px;">
+                            <div id="products" class="row list-group">
+
+                                <div class="thumbnail">
+                                    <img src=" {{item.productImageBaseString}}" height="245" width="245" style="padding-top:2px;" />
+                                    <div class="caption">
+                                        <h4 style="text-align:center;"><strong>{{item.productName}} </strong></h4>
+                                        <div class="row">
+                                            <div style="height:130px; margin-right:14px; margin-left:14px;">
+                                                <p style="text-overflow :ellipsis;">{{item.productDescription}}</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-5">
+                                                <p class="lead ">Rs.{{item.cost}}</p>
+                                            </div>
+                                            <div class="col-lg-5 col-lg-offset-2">
+                                                <a class="btn btn-success" ng-click="addProduct(item)">Add to cart</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4" style="margin-left:80px">
+                            <pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" class="pagination-lg" items-per-page="itemsPerPage"></pagination>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>

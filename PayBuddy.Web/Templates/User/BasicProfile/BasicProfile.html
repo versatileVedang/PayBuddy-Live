@@ -1,0 +1,29 @@
+﻿<link href="../../Content/SignUp.css" rel="stylesheet" />
+<div ng-controller="userCtrl" ng-init="initPutProfile()">
+    <div class="login-page">
+        <div class="form">
+            <form class="login-form" name="myform">
+                <img id="signInImage" src="../../Content/Images/logo.png" height="120" width="120" />
+                <input type="text" placeholder="FirstName" ng-model="user.firstName" ng-message="Required User Name" />
+                <input type="text" placeholder="LastName" ng-model="user.lastName" ng-message="Required Last Name" />
+                <input type="text" placeholder="Email" name="email" ng-model="user.email" required ng-pattern="/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i" />
+                <span ng-show="myform.email.$error.pattern" style="color:red">Please enter valid email address.<br /><br /></span>
+                <input type="text" placeholder="Contact" name="contact" ng-model="user.contact" ng-message="Required Contact" ng-pattern="/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/" />
+                <br />
+                <span ng-show="myform.contact.$error.pattern" style="color:red">Please enter valid Contact Number<br /><br /></span>
+                <div class="form-group">
+                    <label for="gender" style="padding-right:5px;padding-left:0px;">Gender</label>
+                    <label class="radio-inline"><input type="radio" id="gender1" name="Gender" value="1" ng-model="user.genderId" />Male</label>
+                    <label class="radio-inline"><input type="radio" id="gender2" name="Gender" value="2" ng-model="user.genderId" />Female</label>
+                </div>
+                <textarea style=" background-color : #f1f1f1" rows="3" cols="35" placeholder="Address" ng-model="user.address" required></textarea>
+                <br />
+                <br />
+                <br />
+                <div>
+                    <button type="submit" class="btn btn-primary" ng-click="updateProfile(user)" ng-disabled="myform.$invalid">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

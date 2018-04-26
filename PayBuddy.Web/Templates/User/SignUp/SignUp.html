@@ -1,0 +1,32 @@
+﻿<link href="../../Content/SignUp.css" rel="stylesheet" />
+<div class="login-page">
+    <div class="form" ng-controller="userCtrl">
+        <form class="login-form" name="myform">
+            <img id="signInImage" src="../../Content/Images/logo.png" height="120" width="120" />
+            <input type="text" placeholder="FirstName" ng-model="user.firstName" ng-message="Required User Name" />
+            <input type="text" placeholder="LastName" ng-model="user.lastName" ng-message="Required Last Name" />
+            <input type="text" placeholder="Email" name="email" ng-model="user.email" required ng-pattern="/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i" />
+            <span ng-show="myform.email.$error.pattern" style="color:red">Please enter valid email address.<br /><br /></span>
+            <input type="password" placeholder="Password" name="password" ng-model="user.password" ng-pattern="/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])\w{6,}$/" required />
+            <span ng-show="myform.pass.$error.pattern" style="color:red">Please enter valid password<br /><br /></span>
+            <input type="password" placeholder="Confirm Password" ng-model="user.confirmPassword" name="confirmPassword" match-password="user.password" required />
+            <div ng-if="user.password != user.confirmPassword" class="error">
+                <div style="color:red">Passwords do not match</div><br />
+            </div>
+            <input type="text" placeholder="Contact" name="contact" ng-model="user.contact" ng-message="Required Contact" ng-pattern="/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/" />
+            <span ng-show="myform.contact.$error.pattern" style="color:red">Please enter valid Contact Number<br /><br /></span>
+            <div class="form-group">
+                <label for="gender" style="padding-right:5px;padding-left:0px;">Gender  </label>
+                <label class="radio-inline"><input type="radio" id="gender1" name="Gender" value="1" ng-model="user.gender" />Male</label>
+                <label class="radio-inline"><input type="radio" id="gender2" name="Gender" value="2" ng-model="user.gender" />Female</label>
+            </div>
+            <textarea rows="3" cols="35" placeholder="Address" ng-model="user.address" required></textarea>
+            <br />
+            <br />
+            <div>
+                <button type="submit" class="btn btn-primary" ng-click="signUp(user)" ng-disabled="myform.$invalid || user.password != user.confirmPassword">SignUp</button>
+            </div>
+            <p class="message">Already a user? <a href="Index#/signIn">SignIn</a></p>
+        </form>
+    </div>
+</div>

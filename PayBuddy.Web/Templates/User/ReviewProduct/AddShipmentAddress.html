@@ -1,0 +1,130 @@
+﻿<link href="../../../Content/Checkout.css" rel="stylesheet" />
+<div style="margin-top:50px;">
+	<div class="container" style="max-height:100%;">
+		<div class="row" style="margin-top:50px;">
+			<center><h3><strong>Product Review</strong></h3></center><br />
+
+			<div class="row cart-body">
+				<form class="form-horizontal">
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6">
+						<!--REVIEW ORDER-->
+						<div class="panel panel-info" ng-controller="cartCtrl" ng-init="reviewProducts()" style="height:728px">
+							<div class="panel-heading">
+								<strong>Review Order </strong><div class="pull-right"><small><a class="afix-1" href="User#/cart">Edit Cart</a></small></div>
+							</div>
+							<div class="scrollable" style="height:584px; overflow-y:scroll;overflow-x:hidden;">
+								<div class="repeatContent" ng-repeat="item in cartList | orderBy  : 'cartId'  ">
+									<div class="panel-body">
+										<div class="form-group">
+											<div class="col-sm-3 col-xs-3">
+												<img src="data:image/png;base64,{{item.productImageBaseString}}" height="100" width="100" style="padding-top:2px;" />
+											</div>
+											<div class="col-sm-6 col-xs-6">
+												<div class="col-xs-12"><h4><strong> {{item.productName}}</strong></h4></div>
+												<div class="col-xs-12"><h5><strong>Quantity:<span>{{item.quantity}} </span></strong></h5></div>
+											</div>
+											<div class="col-sm-3 col-xs-3 text-right">
+												<strong><span>&#8377;</span>{{item.cost}}</strong>
+											</div>
+											<div class="form-group"><hr /></div>
+											<div class="form-group">
+												<div class="col-xs-12" style="padding-left:30px;padding-right:20px">
+													<div class="col-xs-6">
+														<strong> SubTotal</strong>
+													</div>
+													<div class="col-xs-6 text-right">
+														<h5><strong><span>&#8377;</span> <span>{{item.subTotal}}</span></strong></h5>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="form-group"><hr /></div>
+							<div class="form-group">
+								<div class="col-xs-12" style="padding-left:30px;padding-right:30px">
+									<div class="col-xs-6">
+										<strong>Total</strong>
+									</div>
+									<div class="col-xs-6 text-right" style="font-size:16px;">
+										<span>&#8377;</span> <span><strong>{{total}}</strong></span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--REVIEW ORDER END-->
+					</div>
+
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-pull-6 col-sm-pull-6">
+						<!--SHIPPING METHOD-->
+						<div class="panel panel-info">
+							<div class="panel-heading"><strong>Shipping Address</strong></div>
+							<div class="panel-body" style="height:680px;">
+
+								<div class="form-group">
+									<div class="col-md-12">
+										<strong>First Name:</strong>
+										<input type="text" name="first_name" class="form-control" value="" ng-pattern="/^[a-zA-Z]*$/" ng-model="ship.firstName" required />
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-md-12">
+										<strong>Last Name:</strong>
+										<input type="text" name="last_name" class="form-control" value="" ng-pattern="/^[a-zA-Z]*$/" ng-model="ship.lastName" required />
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-md-12"><strong>Email Address:</strong></div>
+									<div class="col-md-12"><input type="text" name="email_address" class="form-control" value="" ng-model="ship.email" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" required /></div>
+								</div>
+
+								<div class="form-group">
+									<div class="col-md-12"><strong>Address:</strong></div>
+									<div class="col-md-12">
+										<textarea name="address" cols="5" class="form-control" value="" ng-model="ship.address" required style="width:538px;" />
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-md-12"><strong>Country:</strong></div>
+									<div class="col-md-12">
+										<input type="text" name="city" class="form-control" value="" ng-model="ship.country" required />
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-md-12"><strong>State:</strong></div>
+									<div class="col-md-12">
+										<input type="text" name="state" class="form-control" value="" ng-model="ship.state" required />
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-md-12"><strong>Zip / Postal Code:</strong></div>
+									<div class="col-md-12">
+										<input type="text" name="zip_code" class="form-control" value="" ng-model="ship.zipCode" required />
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-md-12"><strong>Contact:</strong></div>
+									<div class="col-md-12"><input type="text" name="contact" class="form-control" value="" ng-model="ship.contact" required /></div>
+								</div>
+
+								<div class="col-lg-6 col-lg-offset-3 " style="margin-bottom:10px;">
+									<div class="btn-group inline pull-left">
+										<a href="User#/reviewProduct" class="btn btn-success" style="width:95px; margin-left:0px;">Back</a>
+										<a href="" class="btn btn-success" ng-click="shipOrder(ship)" style="width:95px; margin-left:20px;">Save</a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!--SHIPPING METHOD END-->
+						<!-- panel-footer -->
+						<div class="col-xs-12 ">
+						</div>
+					</div>
+				</form>
+			</div>
+
+		</div>
+	</div>
+</div>

@@ -1,0 +1,15 @@
+﻿<link href="../../Content/SignIn.css" rel="stylesheet" />
+<div class="login-page">
+	<div class="form">
+		<form class="login-form" ng-controller="userAuthenticationCtrl" ng-init="initSignIn()">
+			<img id="signInImage" src="../../Content/Images/logo.png" /><br />
+			<span style="color:red;">{{authMessage}}</span><br /><br />
+			<input type="email" placeholder="Email" ng-model="user.email" required />
+
+			<input type="password" placeholder="Password" ng-model="user.password" required />
+			<button type="submit" class="btn btn-primary" ng-click="signIn(user)">SignIn</button>
+			<p class="message">Not registered? <a href="Index#/signUp">Create an account</a></p>
+			<a href="Index#/forgotPassword" style="color: blue; font-size: 14px;">Forgot Password?</a>
+		</form>
+	</div>
+</div>

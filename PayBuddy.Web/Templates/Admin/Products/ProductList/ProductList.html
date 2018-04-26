@@ -1,0 +1,150 @@
+﻿<div ng-controller="adminCtrl" ng-init="initGetProduct()" style="margin-top:80px;">
+    <br />
+    <div class="col-lg-offset-1 pull-left margin-bottom-5 ng-scope">
+        <input type="text" placeholder=" Search Results" ng-model="searchInput" class="ng-pristine ng-valid">
+        <div class="btn-group">
+            <button class="btn btn-primary btn-width ml10 " rx-tip="" title="" rx-trigger="hover" tip-placement="bottom" ng-click="productAutoFilter()" data-original-title="Search Record"><i class="icon-search"></i></button>
+        </div>
+        <div class="btn-group">
+            <button class="btn btn-default btn-width ml10" rx-tip="" title="" rx-trigger="hover" tip-placement="bottom" ng-click="productResetSearch()" data-original-title="Undo Search"><i class="icon-undo"></i></button>
+        </div>
+    </div><br /><br /><br />
+    <div class="row">
+        <div class="col-lg-10 col-lg-offset-1">
+            <div class="table-responsive">
+                <rx-grid grid-source="productsGrid" grid-option="productsGridOption"></rx-grid>
+            </div>
+        </div>
+    </div>
+    <!--<div class="row">
+        <div class="col-lg-3  col-lg-offset-3">
+            <table id="customTable" class="table table-responsive table-bordered table-striped">
+                <thead>
+                    <tr style="background: rgba(216, 207, 207, 0.84); ">
+                        <th>Product Id</th>
+                        <th>Product Name</th>
+                        <th>Product Description</th>
+                        <th>Quantity</th>
+                        <th>Cost</th>
+                        <th>Discount</th>
+                        <th>SubCategory</th>
+                        <th>Brand</th>
+                        <th>Product Image</th>
+                        <th>Comment</th>
+                        <th colspan="3">Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr ng-repeat="item in productList">
+                        <td>{{item.productId}}</td>
+                        <td>{{item.productName}}</td>
+                        <td>{{item.productDescription}}</td>
+                        <td>{{item.quantity}}</td>
+                        <td>{{item.cost}}</td>
+                        <td>{{item.discount}}%</td>
+                        <td>{{item.subCategory}}</td>
+                        <td>{{item.brand}}</td>
+                        <td><img src="{{item.productImageBaseString}}" height="70" width="70" /></td>
+                        <td>{{item.comment}}</td>
+                        <td>
+                            <button ng-click="viewProduct(item)" class="btn-sm btn-primary glyphicon glyphicon-eye-open ">View</button>
+                        </td>
+                        <td>
+                            <button ng-click="updateUser(product)" class="btn-sm btn-success  	glyphicon glyphicon-pencil">Update</button>
+                        </td>
+                        <td>
+                            <button ng-click="showProductDeletePopup(item)" class="btn-sm btn-danger glyphicon glyphicon-remove">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModal1" tabindex="-2" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <center><h4 class="modal-title">View Product</h4></center>
+                </div>
+
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="productId" class="col-md-4">ProductId:</label>
+                        <label id="productId" class="col-md-8" ng-bind="product.productId"></label>
+                    </div><br />
+                    <div class="form-group">
+                        <label for="pname" class="col-md-4">Product Name:</label>
+                        <label id="pname" class="col-md-8" ng-bind="product.productName"></label>
+                    </div><br />
+                    <div class="form-group">
+                        <label for="productDescription" class="col-md-4">Product Description:</label>
+                        <label id="productDescription" class="col-md-8" ng-bind="product.productDescription"></label>
+                    </div><br />
+                    <div class="form-group">
+                        <label for="quantity" class="col-md-4">Quantity:</label>
+                        <label id="quantity" class="col-md-8" ng-bind="product.quantity"></label>
+                    </div><br />
+                    <div class="form-group">
+                        <label for="cost" class="col-md-4">Cost:</label>
+                        <label id="cost" class="col-md-8" ng-bind="product.cost"></label>
+                    </div><br />
+                    <div class="form-group">
+                        <label for="discount" class="col-md-4">Discount:</label>
+                        <label id="discount" class="col-md-8" ng-bind="product.discount"></label>
+                    </div><br />
+                    <div class="form-group">
+                        <label for="subCategory" class="col-md-4">SubCategory:</label>
+                        <label id="subCategory" class="col-md-8" ng-bind="product.subCategory"></label>
+                    </div><br />
+                    <div class="form-group">
+                        <label for="brand" class="col-md-4">Brand:</label>
+                        <label id="brand" class="col-md-8" ng-bind="product.brand"></label>
+                    </div><br />
+                    <div class="form-group">
+                        <label for="productImage" class="col-md-4">Product Image:</label>
+                        <img src="{{product.productImage}}" height="50" width="50" />
+                    </div>
+                    <div class="form-group">
+                        <label for="comment" class="col-md-4">Comment:</label>
+                        <label id="comment" class="col-md-8" ng-bind="product.comment"></label>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <center><button type="button" class="btn btn-primary" data-dismiss="modal">Close View</button></center>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModal3" tabindex="-2" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <center><h3 class="modal-title">Delete Product</h3></center>
+                </div>
+
+                <div class="modal-body">
+                    <h5>Are you sure you want to delete this product?</h5>
+                </div>
+                <div class="modal-footer">
+                    <center>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="deleteProduct(selectedProduct)">Delete</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+                    </center>
+                </div>
+            </div>
+
+        </div>
+    </div>-->
+</div>
+
+
+

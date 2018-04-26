@@ -1,0 +1,135 @@
+﻿
+<div ng-controller="adminCtrl" ng-init="initPutProduct()" style="margin-top:80px; overflow-x:hidden; overflow-y:hidden;">
+    <div class="container" style="max-height:100%;">
+        <form class="form-horizontal">
+            <fieldset>
+                <center><h3><strong>Update Product</strong></h3></center><br /><br /><br />
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Product Name</label>
+                    <div class="col-md-4">
+                        <input type="text" id="productName" class="form-control" name="productName" placeholder="Product Name" ng-model="product.productName" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Product Description</label>
+                    <div class="col-md-4">
+                        <textarea class="form-control" id="product_Description" name="product_Description" placeholder="Description" ng-model="product.productDescription"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Quantity</label>
+                    <div class="col-md-4">
+                        <input type="number" min="0" class="form-control" id="quantity" name="quantity" placeholder="Quantity" ng-model="product.quantity" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Cost</label>
+                    <div class="col-md-4">
+                        <input type="text" id="cost" class="form-control" name="cost" placeholder="Cost" ng-model="product.cost" required="" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Discount</label>
+                    <div class="col-md-4" style="margin-top:5px;">
+                        <select class="form-control" ng-model="product.discount">
+                            <option value="">Select Discount</option>
+                            <option value="0">0%</option>
+                            <option value="5">5%</option>
+                            <option value="10">10%</option>
+                            <option value="15">15%</option>
+                            <option value="20">20%</option>
+                            <option value="25">25%</option>
+                            <option value="30">30%</option>
+                            <option value="35">35%</option>
+                            <option value="40">40%</option>
+                            <option value="45">45%</option>
+                            <option value="50">50%</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">SubCategory</label>
+                    <div class="col-md-4" style="margin-top:5px;">
+                        <select class="form-control" ng-model="product.subCategory">
+                            <option value="">Select SubCategory</option>
+                            <option value="Mobiles">Mobiles</option>
+                            <option value="Televisions">Televisions</option>
+                            <option value="Laptops">Laptops</option>
+                            <option value="Earphones">Earphones</option>
+                            <option value="Microwaves">Microwaves</option>
+                            <option value="T-Shirts">T-Shirts</option>
+                            <option value="Shirts">Shirts</option>
+                            <option value="Shoes">Shoes</option>
+                            <option value="Trousers">Trousers</option>
+                            <option value="Jackets">Jackets</option>
+                            <option value="Cricket">Cricket</option>
+                            <option value="Football">Football</option>
+                            <option value="Basketball">Basketball</option>
+                            <option value="Badminton">Badminton</option>
+                            <option value="Tennis">Tennis</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Brand</label>
+                    <div class="col-md-4" style="margin-top:5px;">
+						<select class="form-control" ng-model="product.brand">
+							<option value="">Select Brand</option>
+							<option value="Sony">Sony</option>
+							<option value="Samsung">Samsung</option>
+							<option value="Apple">Apple</option>
+							<option value="Nike">Nike</option>
+							<option value="Puma">Puma</option>
+							<option value="Arrow">Arrow</option>
+							<option value="LG">LG</option>
+							<option value="Reebok">Reebok</option>
+							<option value="Peter England">Peter England</option>
+							<option value="JBL">JBL</option>
+							<option value="Philips">Philips</option>
+							<option value="Hp">Hp</option>
+							<option value="Google">Google</option>
+							<option value="MI">MI</option>
+							<option value="Skull Candy">Skull Candy</option>
+							<option value="Dell">Dell</option>
+							<option value="Lenovo">Lenovo</option>
+							<option value="Roadster">Roadster</option>
+							<option value="Oneplus">Oneplus</option>
+							<option value="Yonex">Yonex</option>
+						</select>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Comment</label>
+                    <div class="col-md-4">
+                        <textarea class="form-control" id="Comment" name="Comment" placeholder="Comment" ng-model="product.comment"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="filebutton">Upload Image</label>
+                    <div class="col-md-4">
+                        <input type='file' url='upload/UploadImage' rx-fileupload upload-event='getImageUploaded' upload-object='logo' /><br />
+                        <img src="{{imageUpload}}" height="100" width="100" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="singlebutton"></label>
+                    <div class="col-lg-3 text-center">
+                        <button id="singlebutton" name="singlebutton" class="btn btn-primary" ng-click="updateProduct(product)">Update</button>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+</div>
+

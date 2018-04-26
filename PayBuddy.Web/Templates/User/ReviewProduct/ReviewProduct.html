@@ -1,0 +1,108 @@
+﻿<link href="../../../Content/Checkout.css" rel="stylesheet" />
+<div  style="margin-top:50px;">
+	<div class="container" style="max-height:100%;">
+		<div class="row" style="margin-top:50px;">
+			<center><h3><strong>Product Review</strong></h3></center><br />
+			<div class="row cart-body" ng-init="reviewProducts(); getAddress();" ng-controller="cartCtrl">
+				<form class="form-horizontal">
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6">
+						<!--REVIEW ORDER-->
+						<div class="panel panel-info">
+							<div class="panel-heading">
+								<strong>Review Order </strong><div class="pull-right"><small><a class="afix-1" href="User#/cart">Edit Cart</a></small></div>
+							</div>
+							<div class="scrollable" style="height:565px; overflow-y:scroll;overflow-x:hidden;">
+								<div class="repeatContent" ng-repeat="item in cartList | orderBy  : 'cartId'  ">
+									<div class="panel-body">
+										<div class="form-group">
+											<div class="col-sm-3 col-xs-3">
+												<img src="data:image/png;base64,{{item.productImageBaseString}}" height="100" width="100" style="padding-top:2px;" />
+											</div>
+											<div class="col-sm-6 col-xs-6">
+												<div class="col-xs-12"><h4><strong> {{item.productName}}</strong></h4></div>
+												<div class="col-xs-12"><h5><strong>Quantity:<span>{{item.quantity}} </span></strong></h5></div>
+											</div>
+											<div class="col-sm-3 col-xs-3 text-right">
+												<strong><span>&#8377;</span>{{item.cost}}</strong>
+											</div>
+											<div class="form-group"><hr /></div>
+											<div class="form-group">
+												<div class="col-xs-12" style="padding-left:30px;padding-right:20px">
+													<div class="col-xs-6">
+														<strong> SubTotal</strong>
+													</div>
+													<div class="col-xs-6 text-right">
+														<h5><strong><span>&#8377;</span> <span>{{item.subTotal}}</span></strong></h5>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="form-group"><hr /></div>
+							<div class="form-group">
+								<div class="col-xs-12" style="padding-left:30px;padding-right:30px">
+									<div class="col-xs-6">
+										<strong>Total</strong>
+									</div>
+									<div class="col-xs-6 text-right" style="font-size:16px;">
+										<span>&#8377;</span> <span><strong>{{total}}</strong></span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--REVIEW ORDER END-->
+					</div>
+
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-pull-6 col-sm-pull-6">
+						<!--SHIPPING METHOD-->
+						<div class="panel panel-info">
+							<div class="panel-heading"><strong>Shipping Address</strong></div>
+							<div class="panel-body" style="height:640px;">
+								<div class="repeatContent" ng-repeat="item in shippingDetail ">
+									<div class="form-group">
+										<div class="row">
+											<div class="col-lg-1 col-lg-offset-1">
+												<input type="radio" name="optradio" ng-model="$parent.shipId" value="{{item.shippingId}}" ng-click="selectedAddress(item)" />
+											</div>
+											<div class="col-lg-8">
+												<label>{{item.shippingAddress}}, {{item.state}}, {{item.country}}, {{item.pinCode}}</label>
+											</div>
+										</div>
+
+									</div>
+									<!--<div class="form-group">
+										<div class="col-lg-6">
+											<div class="radio">
+												<label><input type="radio" name="optradio" ng-click="selectedAddress(item)"> {{item.shippingAddress}}, {{item.state}}, {{item.country}}, {{item.pinCode}}</label>
+											</div>
+										</div>
+
+									</div>-->
+								</div>
+								<div class="col-lg-8 col-lg-offset-3 ">
+									<a href="User#/addShipmentAddress" class="btn btn-success btn-group-lg" name="place order" style=" bottom:0; top:539px;" value="">
+										<span>
+											<i class="fa fa-address-card"></i>
+										</span>Add New Address
+									</a>
+								</div>
+							</div>
+						</div>
+
+
+						<!--SHIPPING METHOD END-->
+						<div>
+							<div class="col-md-6 alignCenter" style="margin-left: 440px;margin-right: 420px;margin-bottom:10px;">
+								<button class="btn btn-success btn-group-lg" name="place order" style="width:55%" value="" ng-disabled="!shipId" ng-click="proceedToPay(cartList, shipId) ">Proceed To Pay</button>
+							</div>
+						</div>
+					</div>
+
+				</form>
+			</div>
+
+		</div>
+	</div>
+</div>

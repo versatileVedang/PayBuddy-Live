@@ -1,0 +1,62 @@
+﻿<div id="myModal"  class="modal-dialog" role="dialog"  ng-init="initViewProduct()" ng-controller="adminCtrl">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <center><h4 class="modal-title">View Product</h4></center>
+            </div>
+
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="productId" class="col-md-4">ProductId:</label>
+                    <label id="productId" class="col-md-8" ng-bind="product.productId"></label>
+                </div><br />
+                <div class="form-group">
+                    <label for="pname" class="col-md-4">Product Name:</label>
+                    <label id="pname" class="col-md-8" ng-bind="product.productName"></label>
+                </div><br />
+                <div class="form-group">
+                    <label for="pdate" class="col-md-4">Product Date:</label>
+                    <label id="pdate" class="col-md-8" ng-bind="product.productDateBaseString"></label>
+                </div><br />
+                <div class="form-group">
+                    <label for="productDescription" class="col-md-4">Product Description:</label>
+                    <label id="productDescription" class="col-md-8" ng-bind="product.productDescription"></label>
+                </div><br />
+                <div class="form-group">
+                    <label for="quantity" class="col-md-4">Quantity:</label>
+                    <label id="quantity" class="col-md-8" ng-bind="product.quantity"></label>
+                </div><br />
+                <div class="form-group">
+                    <label for="cost" class="col-md-4">Cost:</label>
+                    <label id="cost" class="col-md-8" ng-bind="product.cost"></label>
+                </div><br />
+                <div class="form-group">
+                    <label for="discount" class="col-md-4">Discount:</label>
+                    <label id="discount" class="col-md-8" ng-bind="product.discount"></label>
+                </div><br />
+                <div class="form-group">
+                    <label for="subCategory" class="col-md-4">SubCategory:</label>
+                    <label id="subCategory" class="col-md-8" ng-bind="product.subCategory"></label>
+                </div><br />
+                <div class="form-group">
+                    <label for="brand" class="col-md-4">Brand:</label>
+                    <label id="brand" class="col-md-8" ng-bind="product.brand"></label>
+                </div><br />   
+                <div class="form-group">
+                    <label for="productImage" class="col-md-4">Product Image:</label>
+                    <img src="{{product.productImageBaseString}}" height="60" width="60" />
+                </div><br />
+                <div class="form-group">
+                    <label for="comment" class="col-md-4">Comment:</label>
+                    <label id="comment" class="col-md-8" ng-bind="product.comment"></label>
+                </div><br />
+            </div>
+            <div class="modal-footer">
+                <center><button type="button" class="btn btn-primary" data-dismiss="modal">Close View</button></center>
+            </div>
+
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5FA73786-4C66-4565-9BFF-F3F1ABEC6AAC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PayBuddy.Domain</RootNamespace>
+    <AssemblyName>PayBuddy.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Rx.Repository">
+      <HintPath>..\packages\Library\Rx.Repository.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountDetailsDomain\AccountDetailsDomain.cs" />
+    <Compile Include="AccountDetailsDomain\Interface\IAccountDetailsDomain.cs" />
+    <Compile Include="AdminDomain\AdminDomain.cs" />
+    <Compile Include="AdminDomain\Interface\IAdminDomain.cs" />
+    <Compile Include="AppUow\AppUow.cs" />
+    <Compile Include="AppUow\Interface\IAppUow.cs" />
+    <Compile Include="BalanceDomain\BalanceDomain.cs" />
+    <Compile Include="BalanceDomain\Interface\IBalanceDomain.cs" />
+    <Compile Include="BaseDomain\BaseDomain.cs" />
+    <Compile Include="CardDomain\CardDomain.cs" />
+    <Compile Include="CardDomain\Interface\ICardDomain.cs" />
+    <Compile Include="CartDomain\CartDomain.cs" />
+    <Compile Include="CartDomain\Interface\ICartDomain.cs" />
+    <Compile Include="DepositDomain\DepositDomain.cs" />
+    <Compile Include="DepositDomain\Interface\IDepositDomain.cs" />
+    <Compile Include="HelpDeskDomain\HelpDeskDomain.cs" />
+    <Compile Include="HelpDeskDomain\Interface\IHelpDeskDomain.cs" />
+    <Compile Include="Models\CartModel.cs" />
+    <Compile Include="Models\DepositModel.cs" />
+    <Compile Include="Models\OrderDetailsModel.cs" />
+    <Compile Include="Models\ProductModel.cs" />
+    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Models\WithdrawModel.cs" />
+    <Compile Include="OrderDetailDomain\Interface\IOrderDetailDomain.cs" />
+    <Compile Include="OrderDetailDomain\OrderDetailDomain.cs" />
+    <Compile Include="OrderDomain\Interface\IOrderDomain.cs" />
+    <Compile Include="OrderDomain\OrderDomain.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShippingDomain\Interface\IShippingDomain.cs" />
+    <Compile Include="ShippingDomain\ShippingDomain.cs" />
+    <Compile Include="UserDomain\Interface\IUserDomain.cs" />
+    <Compile Include="UserDomain\UserDomain.cs" />
+    <Compile Include="WithdrawDomain\Interface\IWithdrawDomain.cs" />
+    <Compile Include="WithdrawDomain\WithdrawDomain.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PayBuddy.Infrastructure\PayBuddy.Infrastructure.csproj">
+      <Project>{7ce58422-f684-4fe5-abb5-8af4fb5bca4e}</Project>
+      <Name>PayBuddy.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PayBuddy.Models\PayBuddy.Models.csproj">
+      <Project>{3decfdaf-f52e-4a67-aa6e-7f4de83dab3c}</Project>
+      <Name>PayBuddy.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

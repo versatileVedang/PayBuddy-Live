@@ -1,0 +1,69 @@
+﻿
+<link href="../../../Content/Withdraw.css" rel="stylesheet" />
+<div ng-controller="balanceCtrl" ng-init="withdraw()">
+
+    <div class="row" style="margin-top:10px; width:500px;">
+        <div class="panel panel-info">
+            <div class="panel-heading"><span><i class="fa fa-inr fa-sm" aria-hidden="true"></i></span> Your balance: {{balance | number:2}}</div>
+            <div class="panel-body">
+              <form name="withdraw">
+			  	<div class="form-group">
+			  		<label for="name" class="cols-lg-2 control-label">Required Name</label>
+			  		<div class="cols-lg-10">
+			  			<div class="input-group">
+			  				<span class="input-group-addon"><i class="fa fa-user-circle-o fa-lg" aria-hidden="true"></i></span>
+			  				<input type="text" placeholder="Enter name " class=" form-control " Enter Name" ng-model="transfer.name" ng-message="Required Name" required />
+			  			</div>
+			  		</div>
+			  	</div>
+			  	<div class="form-group">
+			  		<label for="IFSC" class="cols-sm-2 control-label">IFSC</label>
+			  		<div class="cols-sm-10">
+			  			<div class="input-group">
+			  				<span class="input-group-addon"><i class="fa fa-book fa-lg" aria-hidden="true"></i></span>
+			  				<input type="text" placeholder="Enter IFSC" class="form-control" ng-model="transfer.ifsc" maxlength="14" ng-message="Required IFSC" required /><!--ng-pattern="^[A-Za-z]{4}[a-zA-Z0-9]{7}$"-->
+			  			</div>
+			  		</div>
+			  	</div>
+			  	<div class="form-group">
+			  		<label for="username" class="cols-sm-2 control-label">Account Number</label>
+			  		<div class="cols-sm-10">
+			  			<div class="input-group">
+			  				<span class="input-group-addon"><i class="fa fa-users fa-lg" aria-hidden="true"></i></span>
+			  				<input type="number" placeholder="Enter Acc. No" class="form-control" ng-model="transfer.accountNo" ng-message="AccountNo Required" required /><!--ng-pattern="/^[0-9]{3,4}$/"-->
+			  			</div>
+			  		</div>
+			  	</div>
+			  	<div class="form-group">
+			  		<label for="Select Bank" class="cols-sm-2 control-label">Select Bank</label>
+			  		<div class="cols-sm-10">
+			  			<select class="form-control" name="" ng-model="transfer.bank" style="width:467px;" required>
+			  				<i class=" 	fa fa-bank fa-lg" aria-hidden="true"></i>
+			  				<option value="">Select Bank</option>
+			  				<option value="1">SBI</option>
+			  				<option value="2">ICICI</option>
+			  				<option value="3">Bank Of Baroda</option>
+			  				<option value="4">HDFC</option>
+			  				<option value="5">AXIS</option>
+			  			</select>
+			  		</div>
+			  	</div>
+			  	<div class="form-group">
+			  		<label for="confirm" class="cols-sm-2 control-label">Amount</label>
+			  		<div class="cols-sm-10">
+			  			<div class="input-group">
+			  				<span class="input-group-addon"><i class="fa fa-inr fa-lg" aria-hidden="true" style="width:20px;"></i></span>
+			  				<input type="number" placeholder="Enter Amount" class="form-control" ng-model="transfer.amount" min="1000" max="99999" ng-message="Enter Amount" required />
+			  			</div>
+			  		</div>
+			  	</div>
+			  	<div class="form-group ">
+			  		<button type="button" class="btn btn-danger btn-md btn-block login-button" ng-disabled="withdraw.$invalid" ng-click="withdrawMoney(transfer)">Withdraw</button>
+			  	</div> 
+			  </form>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        

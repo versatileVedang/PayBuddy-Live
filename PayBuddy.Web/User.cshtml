@@ -1,0 +1,163 @@
+﻿@{
+    Layout = null;
+}
+@using System.Web.Optimization
+@using System.Reflection
+
+@{
+    WebPageHttpHandler.DisableWebPagesResponseHeader = true;
+    System.Web.Mvc.MvcHandler.DisableMvcResponseHeader = true;
+    Response.OutputCache(0);
+}
+
+<!DOCTYPE html>
+
+<html ng-app="app">
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/MainTheme/application.css" rel="stylesheet" />
+
+    @Styles.Render("~/Content/css")
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+          @Scripts.Render("~/bundles/modernizr")
+
+    <title>PayBuddy</title>
+</head>
+<body ng-controller="userCtrl" ng-init="initUser(); initCartCount();" style=" overflow-x:hidden; height:100%; min-height:100%">
+
+    <div class="container-fluid">
+        <div class="content-wrap">
+
+            <!--header-->
+            <div class="row" id="header">
+                <nav class="navbar navbar-default navbar-fixed-top" id="navbar_fixed" style="background-color:#16806c">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a href="User#/dashboard" class="navbar-brand" style="padding-left:5px;">
+                                <img src="~/Content/Images/logo.png" alt="PayBuddy">
+                            </a>
+                        </div>
+                        <div id="navbar1" class="navbar-collapse collapse" style="margin-left:85px;">
+                            <ul class="nav navbar-nav" style="background-color: #16806c; margin-left:50px; margin-top:37px;">
+                                <li class="dropdown">
+                                    <strong><a href="" class="dropdown-toggle" data-toggle="dropdown" style="color:black; font-size:23px;">Products <b class="caret"></b></a></strong>
+                                    <ul class="dropdown-menu" role="menu" style="background-color: #5fc2af;">
+                                        <li class="dropdown dropdown-submenu">
+                                            <a ng-click="electronics()" class="dropdown-toggle menuItems" data-toggle="dropdown">Electronics</a>
+                                            <ul class="dropdown-menu" style="background-color: #5fc2af;">
+                                                <li><a href="User#/productSubCategory/1" class="menuItems">Mobiles</a></li>
+                                                <li><a href="User#/productSubCategory/10" class="menuItems">Televisions</a></li>
+                                                <li><a href="User#/productSubCategory/11" class="menuItems">Laptops</a></li>
+                                                <li><a href="User#/productSubCategory/12" class="menuItems">Earphones</a></li>
+                                                <li><a href="User#/productSubCategory/13" class="menuItems">Microwaves</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown dropdown-submenu">
+                                            <a href="User#/productCategory/2" ng-click="clothing()" class="dropdown-toggle menuItems" data-toggle="dropdown">Clothing</a>
+                                            <ul class="dropdown-menu" style="background-color: #5fc2af;">
+                                                <li><a href="User#/productSubCategory/14" class="menuItems">T-Shirts</a></li>
+                                                <li><a href="User#/productSubCategory/15" class="menuItems">Shirts</a></li>
+                                                <li><a href="User#/productSubCategory/16" class="menuItems">Shoes</a></li>
+                                                <li><a href="User#/productSubCategory/17" class="menuItems">Trousers</a></li>
+                                                <li><a href="User#/productSubCategory/18" class="menuItems">Jackets</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown dropdown-submenu">
+                                            <a href="User#/productCategory/3" ng-click="sports()" class="dropdown-toggle menuItems" data-toggle="dropdown">Sports</a>
+                                            <ul class="dropdown-menu" style="background-color: #5fc2af;">
+                                                <li><a href="User#/productSubCategory/19" class="menuItems">Cricket</a></li>
+                                                <li><a href="User#/productSubCategory/20" class="menuItems">Football</a></li>
+                                                <li><a href="User#/productSubCategory/21" class="menuItems">Basketball</a></li>
+                                                <li><a href="User#/productSubCategory/22" class="menuItems">Badminton</a></li>
+                                                <li><a href="User#/productSubCategory/23" class="menuItems">Tennis</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div id="sideLinks">
+                                <ul class="transferLink">
+                                    <li>
+                                        <strong><a href="" class="headerLink"><span style="margin-right:5px;" class="icon-credit-card"></span>Pay/Transfer</a></strong>
+                                        <strong><a href="" ng-click="redirectToBalance()" class="headerLink"><span style="margin-right:5px;" class="icon-rupee"></span>Balance</a></strong>
+                                        <strong><a href="User#/shoppingCart" class="headerLink"><span style="margin-right:5px;" class="icon-shopping-cart"></span>Cart<span class="badge" style="font-size:15px">{{cartCount}}</span></a></strong>
+                                        <strong><a href="" style="margin-left:70px; font-size:23px; color:black;" ng-click="redirectToPutUser()"> Welcome {{displayName}}! </a></strong>
+                                        <strong><a href="" style="margin-left:10px; font-size:18px" class="btn btn-primary" id="btn2" ng-click="signOut()"><span class="glyphicon glyphicon-user"></span>SignOut</a></strong>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div ng-view style=" background-image: url('Content/Images/background.png'); min-height:580px;"> </div>
+        </div>
+
+    </div>
+    <div >
+        <footer id="myFooter">
+            <div class="row">
+                <div class="col-sm-3">
+
+                </div>
+
+                <div class="col-sm-2">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Career</a></li>
+
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h5>Support</h5>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Help desk</a></li>
+                        <li><a href="#">Forums</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h5>Policies</h5>
+                    <ul>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Refund</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <div class="social-networks">
+                        <a href="https://github.com/login" class="github"><i class="fa fa-github"></i></a>
+                        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="https://accounts.google.com/signin/v2/identifier?hl=en-US&flowName=GlifWebSignIn&flowEntry=ServiceLogin" class="google"><i class="fa fa-google-plus"></i></a>
+                    </div>
+                    <button type="button" class="btn btn-default">Contact us</button>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p><strong> © 2018 PayBuddy </strong> </p>
+            </div>
+        </footer>
+    </div>
+
+
+
+    @Scripts.Render("~/bundles/jQuery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/angular")
+    <script src="~/Scripts/lib/angular/ui.bootstrap.js"></script>
+    @Scripts.Render("~/bundles/rx")
+    @Scripts.Render("~/bundles/appstart")
+    @Scripts.Render("~/bundles/dataServices")
+    @Scripts.Render("~/bundles/controllers")
+
+</body>
+</html>

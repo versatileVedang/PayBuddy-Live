@@ -1,0 +1,158 @@
+﻿@{
+    Layout = null;
+}
+@using System.Web.Optimization
+@using System.Reflection
+
+@{
+    WebPageHttpHandler.DisableWebPagesResponseHeader = true;
+    System.Web.Mvc.MvcHandler.DisableMvcResponseHeader = true;
+    Response.OutputCache(0);
+}
+
+<!DOCTYPE html>
+
+<html ng-app="app">
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/MainTheme/application.css" rel="stylesheet" />
+    <link href="~/Content/Footer/adminFooter.css" rel="stylesheet" />
+
+    @Styles.Render("~/Content/css")
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <title>PayBuddy</title>
+</head>
+<body ng-controller="adminCtrl" ng-init="initAdmin()" style="overflow-x:hidden; overflow-y:no-display;" id="bodyElement">
+
+    <div class="container-fluid" style="background-color:#eee;">
+        <div class="content-wrap">
+
+            <!--header-->
+            <div class="row" id="header">
+                <nav class="navbar navbar-default navbar-fixed-top" id="navbar_fixed" style="background-color:#16806c">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+
+
+                            <a href="Admin#/userList" class="navbar-brand" style="padding-left:5px;">
+                                <img src="~/Content/Images/logo.png" alt="PayBuddy">
+                            </a>
+                        </div>
+
+                        <div id="navbar1" class="navbar-collapse collapse" style="margin-left:85px;">
+
+                            <ul class="nav navbar-nav" style="background-color: #16806c; margin-left:100px; margin-top:37px;">
+                                <li class="dropdown">
+                                    <strong><a href="" class="dropdown-toggle" data-toggle="dropdown" style="color:black; font-size:23px;">Users<b class="caret"></b></a></strong>
+
+                                    <ul class="dropdown-menu" role="menu" style="background-color: #5fc2af;">
+                                        <li><a href="Admin#/userList" class="menuItems">Users List</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="nav navbar-nav" style="background-color: #16806c; margin-left:70px; margin-top:37px;">
+                                <li class="dropdown">
+                                    <strong><a href="" class="dropdown-toggle" data-toggle="dropdown" style="color:black; font-size:23px;">Products<b class="caret"></b></a></strong>
+
+                                    <ul class="dropdown-menu" role="menu" style="background-color: #5fc2af;">
+                                        <li><a href="Admin#/productList" class="menuItems">Products List</a></li>
+                                        <li><a href="Admin#/postProduct" class="menuItems">Add Product</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <div id="sideLinks">
+                                <ul class="transferLink">
+                                    <li>
+                                        <label style="font-size:20px; color:black;">Welcome {{displayName}}!</label>
+                                        <a href="" style="margin-left:10px; font-size:18px" class="btn btn-primary" id="btn2" ng-click="signOut()"><span class="glyphicon glyphicon-user"></span> SignOut</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            <div ng-view style=" background-image: url('Content/Images/background.png'); min-height:620px;"> </div>
+
+        </div>
+
+        <div style="height:150px; ">
+            <div id="adminFooter" class="navbar-fixed-bottom">
+                <div class="row" style="margin-left: 0px; margin-right: 0px;">
+                    <div class="col-sm-3">
+
+                    </div>
+
+                    <div class="col-sm-2">
+                        <h5>Company</h5>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Career</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="col-sm-2">
+                        <h5>Support</h5>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Help desk</a></li>
+                            <li><a href="#">Forums</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-2">
+                        <h5>Policies</h5>
+                        <ul>
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Refund</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="social-networks">
+                            <a href="https://github.com/login" class="github"><i class="fa fa-github"></i></a>
+                            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="https://accounts.google.com/signin/v2/identifier?hl=en-US&flowName=GlifWebSignIn&flowEntry=ServiceLogin" class="google"><i class="fa fa-google-plus"></i></a>
+                        </div>
+                        <button type="button" class="btn btn-default">Contact us</button>
+                    </div>
+                </div>
+                <div class="footer-copyright">
+                    <p><strong> © 2018 PayBuddy </strong> </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+    @Scripts.Render("~/bundles/jQuery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/angular")
+    <script src="~/Scripts/lib/angular/ui.bootstrap.js"></script>
+    @Scripts.Render("~/bundles/rx")
+    @Scripts.Render("~/bundles/appstart")
+    @Scripts.Render("~/bundles/logic")
+    @Scripts.Render("~/bundles/dataServices")
+    @Scripts.Render("~/bundles/controllers")
+
+</body>
+</html>

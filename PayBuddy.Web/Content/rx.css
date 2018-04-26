@@ -1,0 +1,1969 @@
+﻿.wait-message {
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 15px;
+}
+
+.rxloadin {
+    cursor: wait;
+    color: #414C55;
+    font: 20px/24px 'Segoe UI','Lucida Grande',Verdana,Arial,Helvetica,sans-serif;
+    -webkit-box-align: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
+    -webkit-transition: 200ms opacity;
+    background-color: rgba(255, 255, 255, 0.75);
+    bottom: 0;
+    display: -webkit-box;
+    left: 0;
+    overflow: auto;
+    padding: 20px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    vertical-align: central;
+    font-size: 13px;
+    z-index: 9999;
+}
+
+.rxloadout {
+    display: none;
+}
+
+.rx-error {
+    border: solid 2px #CB5A5A !important;
+}
+
+.rx-valid {
+    /*border: solid 1px #23CAAB !important;*/
+}
+
+.wait-box {
+    /*background-color: #FFFFFF;
+    border: 1px solid #808080;
+    box-shadow: 0 0 10px #808080;*/
+    cursor: wait;
+    padding: 20px;
+    z-index: 9999;
+}
+
+.wait-image {
+    padding-right: 20px;
+    vertical-align: middle;
+}
+
+
+
+/* application css */
+
+.width-70 {
+    width: 50px;
+}
+
+
+
+.width-100 {
+    width: 100px;
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th {
+    background-color: #DCDCDD;
+}
+
+.dropdown-colorpicker > .dropdown-menu {
+    top: 80%;
+    left: -7px;
+    padding: 4px;
+    min-width: 130px;
+    max-width: 130px;
+}
+
+    .dropdown-colorpicker > .dropdown-menu.pull-right {
+        right: -7px;
+        left: auto;
+    }
+
+    .dropdown-colorpicker > .dropdown-menu > li {
+        display: block;
+        float: left;
+        width: 20px;
+        height: 20px;
+        margin: 2px;
+    }
+
+        .dropdown-colorpicker > .dropdown-menu > li > .colorpick-btn {
+            display: block;
+            width: 20px;
+            height: 20px;
+            margin: 0;
+            padding: 0;
+            border-radius: 0;
+            position: relative;
+            -webkit-transition: all ease .1s;
+            transition: all ease .1s;
+        }
+
+            .dropdown-colorpicker > .dropdown-menu > li > .colorpick-btn:hover {
+                text-decoration: none;
+                opacity: .8;
+                filter: alpha(opacity=80);
+                -webkit-transform: scale(1.08);
+                -ms-transform: scale(1.08);
+                transform: scale(1.08);
+            }
+
+            .dropdown-colorpicker > .dropdown-menu > li > .colorpick-btn.selected:after {
+                content: "\f00c";
+                display: inline-block;
+                font-family: FontAwesome;
+                font-size: 11px;
+                color: #FFF;
+                position: absolute;
+                left: 0;
+                right: 0;
+                text-align: center;
+                line-height: 20px;
+            }
+
+.btn-colorpicker {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #DDD;
+    vertical-align: middle;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+.displayNone {
+    display: none !important;
+}
+
+.displayNoneAlert {
+    display: none !important;
+}
+
+.datepicker {
+    z-index: 99999 !important;
+}
+
+.tableRow {
+    color: #005580 !important;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+/*---------CSS for folder explorer---*/
+.background-gray-light {
+    background: #f0f0f0 !important;
+    border-bottom: 1px solid #ccc !important;
+}
+
+.widget-body .table thead.background-gray-light:first-child tr {
+    background: #f0f0f0 !important;
+    border-bottom: 1px solid #ccc !important;
+}
+
+.widget-body .table thead.background-gray-light tr th:hover {
+    background: #e5f3fb !important;
+    border-bottom: 1px solid #70c0e7 !important;
+    border-right: 1px solid #70c0e7 !important;
+    border-left: 1px solid #70c0e7 !important;
+}
+
+.widget-body .table thead.background-gray-light tr th:first-child:hover {
+    border-left: none !important;
+}
+
+.widget-body .table thead.background-gray-light tr th:last-child:hover {
+    border-right: none !important;
+}
+
+.table.table-hover-explorer tbody tr:hover, .table.table-hover-explorer tbody tr.selected {
+    background-color: #e5f3fb !important;
+    border: 1px solid #70c0e7 !important;
+}
+
+.table.table-hover-explorer tbody tr {
+    cursor: default;
+    background-color: #fff !important;
+    border-right: 1px solid transparent !important;
+    border-left: none !important;
+    border-top: 1px solid #fff !important;
+}
+
+.explorer-listing > ul {
+    margin-left: 0px !important;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.explorer-listing ul {
+    overflow: hidden;
+    margin-top: 0px !important;
+}
+
+    .explorer-listing ul li {
+        padding: 1px 10px !important;
+        float: left;
+        width: 100%;
+        border: 1px solid #fff !important;
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+        cursor: default;
+    }
+
+    .explorer-listing div.rootfolder, .explorer-listing ul ul li div {
+        background-color: #fff !important;
+        border: 1px solid #fff !important;
+        padding: 3px 8px;
+    }
+
+        .explorer-listing div:hover.rootfolder, .explorer-listing ul ul li div:hover, .explorer-listing div.rootfolder.selected, .explorer-listing ul ul li div.selected {
+            background-color: #e5f3fb !important;
+            border: 1px solid #70c0e7 !important;
+        }
+
+.explorer-listing div.close-tree, .explorer-listing div.open-tree {
+    background-color: #fff !important;
+    border: 1px solid #fff !important;
+    padding: 0px 0px;
+}
+
+    .explorer-listing div.open-tree ul {
+        overflow: hidden;
+        margin-top: 0px !important;
+    }
+
+.explorer-listing div:hover.close-tree, .explorer-listing div:hover.open-tree {
+    background-color: #fff !important;
+    border: 1px solid #fff !important;
+}
+
+.explorer-listing ul li i:hover.icon-caret-right, .explorer-listing ul li i.icon-caret-right.selected {
+    color: #00eaff !important;
+    cursor: pointer;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.explorer-listing ul ul {
+    list-style: none !important;
+}
+
+    .explorer-listing ul ul li {
+        padding-left: 0px !important;
+    }
+
+.explorer-listing ul li.no-subfolder {
+    padding-left: 17px !important;
+}
+
+.folder-color {
+    color: #F3E2A9 !important;
+    text-shadow: 1px 1px #D9C4A6;
+    margin-right: 5px;
+}
+
+.folder-margin-left {
+    margin-left: 5px;
+}
+
+.folder-color-inactive {
+    color: #ccc !important;
+    text-shadow: 1px 1px #aaa;
+    margin-right: 5px;
+}
+
+.bigger-175 {
+    font-size: 175%;
+}
+/*---------CSS for folder explorer ends---*/
+
+
+
+.breadcrumbs {
+    position: relative;
+    min-height: 41px;
+    line-height: 40px;
+    padding: 0 0px 0 0px;
+    display: block;
+}
+
+    .breadcrumbs.fixed, .breadcrumbs.breadcrumbs-fixed {
+        position: fixed;
+        right: 0;
+        left: 190px;
+        top: 45px;
+        z-index: 1028;
+    }
+
+.breadcrumb {
+    background-color: transparent;
+    display: inline-block;
+    line-height: 24px;
+    margin: 0 22px 0 0px;
+    padding: 0;
+    font-size: 14px;
+    color: #333;
+    border-radius: 0;
+}
+
+.modal-body .form-group {
+    margin-bottom: 4px !important;
+}
+
+.breadcrumb > li, .breadcrumb > li.active {
+    color: #555;
+}
+
+    .breadcrumb > li > a, .breadcrumb > li > span {
+        display: inline-block;
+        padding: 0px;
+        color: #2f81c4;
+    }
+
+    .breadcrumb > li + li:before {
+        font-family: FontAwesome;
+        font-size: 14px;
+        content: "\f105";
+        color: #b2b6bf;
+        margin-right: 2px;
+        padding: 0 3px 0 2px;
+        position: relative;
+        top: 1px;
+    }
+
+.breadcrumb .home-icon {
+    margin-left: 4px;
+    margin-right: 2px;
+    font-size: 15px;
+    position: relative;
+    top: 0px;
+}
+
+@media only screen and (max-width:991px) {
+    .breadcrumb {
+        margin-left: 90px;
+    }
+
+    .breadcrumbs.fixed, .breadcrumbs.breadcrumbs-fixed {
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        z-index: auto !important;
+    }
+
+    body.breadcrumbs-fixed .ace-settings-container {
+        top: 50px;
+    }
+}
+
+@media only screen and (max-width:480px) {
+    .breadcrumb > li > a {
+        padding: 0 1px;
+    }
+}
+
+@media only screen and (max-width:320px) {
+    .breadcrumb {
+        margin-left: 36px;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .input-text-29 {
+        width: 45% !important;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .input-text-33 {
+        width: 49% !important;
+    }
+}
+
+.pagingControl {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+
+.rx-pagingcontrols {
+    display: inline;
+    margin-left: 0px !important;
+}
+
+.pagingControl .next-control {
+    background-image: url("/Content/img/next.png");
+    background-repeat: no-repeat;
+    height: 18px;
+    width: 18px;
+}
+
+.pagingControl .previous-control {
+    background-image: url("/Content/img/previous.png");
+    background-repeat: no-repeat;
+    height: 18px;
+    width: 18px;
+}
+
+.wait-box {
+    /*background-color: #FFFFFF;
+    border: 1px solid #808080;
+    box-shadow: 0 0 10px #808080;*/
+    cursor: wait;
+    padding: 20px;
+    z-index: 9999;
+}
+
+.wait-image {
+    padding-right: 20px;
+    vertical-align: middle;
+}
+
+.wait-message {
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 15px;
+}
+
+.mainOverlayout .alertbox {
+    -webkit-border-radius: 3px;
+    -webkit-box-orient: vertical;
+    -webkit-transition: 200ms -webkit-transform;
+    background: white;
+    box-shadow: 0 4px 23px 5px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0,0,0,0.15);
+    color: #333;
+    display: -webkit-box;
+    min-width: 400px;
+    width: 500px;
+    padding: 0;
+    position: relative;
+    z-index: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+}
+
+/*--This is Chrome and safari only css--*/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .mainOverlayout .alertbox {
+        margin-top: 0px;
+    }
+}
+/*--Chrome and safari only css ends--*/
+
+#rxAlert {
+    width: 500px;
+}
+
+.alertHeader {
+}
+
+.rxloadin {
+    cursor: wait;
+    color: #414C55;
+    font: 20px/24px 'Segoe UI','Lucida Grande',Verdana,Arial,Helvetica,sans-serif;
+    -webkit-box-align: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
+    -webkit-transition: 200ms opacity;
+    background-color: rgba(255, 255, 255, 0.75);
+    bottom: 0;
+    display: -webkit-box;
+    left: 0;
+    overflow: auto;
+    padding: 20px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    vertical-align: central;
+    font-size: 13px;
+    z-index: 9999;
+}
+
+.rxloadout {
+    display: none;
+}
+
+.rx-error {
+    border: solid 2px #CB5A5A !important;
+}
+
+.rx-valid {
+    /*border: solid 1px #23CAAB !important;*/
+}
+
+.previousDisabled {
+    color: black;
+}
+
+    .previousDisabled:hover {
+        color: black !important;
+    }
+
+.rxfilter {
+    padding-top: 5px;
+    cursor: pointer;
+}
+
+.read-filter {
+    color: #B72E2E;
+}
+
+.rxtree-anchor {
+    color: #3991E9 !important;
+    cursor: pointer;
+    padding: 5px;
+}
+
+    .rxtree-anchor:hover {
+        color: #1F70C1 !important;
+        text-decoration: underline;
+    }
+
+.rx-sort {
+    padding-left: 5px;
+}
+
+/* CSS for rx-calender */
+
+
+.calendardays {
+}
+
+    .calendardays tr td {
+        border: solid 1px black;
+    }
+
+    .calendardays .table-bordered > thead > tr > th, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td {
+        border: 1px solid #ddd !important;
+    }
+
+    .calendardays .table-bordered {
+        border: 1px solid #ddd !important;
+    }
+
+.dayNumber {
+    vertical-align: central;
+    text-align: center;
+}
+
+.alignCenter {
+    text-align: center !important;
+}
+
+.calendardays .popover-title {
+    display: normal !important;
+}
+
+.calendardays .popover-content {
+    padding: 1px 1px;
+    background-color: #fff;
+    border: solid 1px #fff;
+    color: black !important;
+}
+/*.calendardays .popover-title {
+    display: normal !important;
+}
+
+.calendardays .popover-content {
+   background-color: #fff;
+border: solid 1px #fff;
+color:black !important;
+}
+
+.calendardays .arrow:after {
+        border-top-color: #fff !important;
+    color:black !important;
+}
+
+.calendardays .arrow {
+     border-top-color: #fff !important;
+    color:black !important; 
+}
+.calendardays .popover-title {
+    display: normal !important;
+}*/
+.calendardays .popover {
+    width: 257px !important;
+}
+
+    .calendardays .popover .arrow, .calendardays .popover .arrow:after {
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 0;
+        border-color: transparent;
+        border-style: solid;
+    }
+
+    .calendardays .popover .arrow {
+        border-width: 11px;
+    }
+
+        .calendardays .popover .arrow:after {
+            border-width: 10px;
+            content: "";
+        }
+
+    .calendardays .popover.top .arrow {
+        bottom: -11px;
+        left: 50%;
+        margin-left: -11px;
+        border-top-color: #999;
+        border-top-color: rgba(0,0,0,0.25);
+        border-bottom-width: 0;
+    }
+
+        .calendardays .popover.top .arrow:after {
+            bottom: 1px;
+            margin-left: -10px;
+            border-top-color: #fff;
+            border-bottom-width: 0;
+            content: " ";
+        }
+
+    .calendardays .popover.right .arrow {
+        top: 50%;
+        left: -11px;
+        margin-top: -11px;
+        border-right-color: #999;
+        border-right-color: rgba(0,0,0,0.25);
+        border-left-width: 0;
+    }
+
+        .calendardays .popover.right .arrow:after {
+            bottom: -10px;
+            left: 1px;
+            border-right-color: #fff;
+            border-left-width: 0;
+            content: " ";
+        }
+
+    .calendardays .popover.bottom .arrow {
+        top: -11px;
+        left: 50%;
+        margin-left: -11px;
+        border-bottom-color: #999;
+        border-bottom-color: rgba(0,0,0,0.25);
+        border-top-width: 0;
+    }
+
+        .calendardays .popover.bottom .arrow:after {
+            top: 1px;
+            margin-left: -10px;
+            border-bottom-color: #fff;
+            border-top-width: 0;
+            content: " ";
+        }
+
+    .calendardays .popover.left .arrow {
+        top: 50%;
+        right: -11px;
+        margin-top: -11px;
+        border-left-color: #999;
+        border-left-color: rgba(0,0,0,0.25);
+        border-right-width: 0;
+    }
+
+        .calendardays .popover.left .arrow:after {
+            right: 1px;
+            bottom: -10px;
+            border-left-color: #fff;
+            border-right-width: 0;
+            content: " ";
+        }
+
+.fc-header .background-blue th {
+    text-align: center !important;
+}
+
+.fc-header .background-blue {
+    background: #2f81c4 !important;
+    color: #fff !important;
+}
+
+.matrixDate {
+    height: 20px;
+}
+
+.matrixTime {
+    height: 20px;
+    float: left;
+    text-align: center;
+    width: 45px;
+    font-size: 12px;
+    margin-right: 1px;
+    font-weight: bold;
+}
+
+.matrixPatternRed {
+    height: 20px;
+    width: 11.25px;
+    background-color: #ED4242;
+    float: left;
+}
+
+.matrixPatternGreen {
+    height: 20px;
+    width: 11.25px;
+    background-color: #2FCBA9;
+    float: left;
+}
+
+.matrixPatternGray {
+    height: 20px;
+    width: 11.25px;
+    background-color: #F3F6F7;
+    float: left;
+}
+
+.patternMargin {
+    margin-right: 1px;
+    width: 45px;
+    float: left;
+}
+
+.customWidth {
+    width: 1550px;
+}
+
+.calendar-schedule {
+    border-bottom: 1px solid #cccccc;
+    border-left: 1px solid #cccccc;
+}
+
+    .calendar-schedule td {
+        border-top: 1px solid #cccccc;
+        border-right: 1px solid #cccccc;
+    }
+
+    .calendar-schedule tr td {
+        width: 14.28% !important;
+    }
+
+    .calendar-schedule td table td {
+        border: none;
+        vertical-align: middle;
+    }
+
+        .calendar-schedule td table td.cell-gray {
+            width: 2% !important;
+        }
+
+
+    .calendar-schedule td {
+        border-top: 1px solid #cccccc;
+        border-right: 1px solid #cccccc;
+    }
+
+    .calendar-schedule tr td {
+        width: 14.28% !important;
+    }
+
+    .calendar-schedule td table td {
+        border: none;
+        vertical-align: middle;
+    }
+
+        .calendar-schedule td table td.cell-gray {
+            width: 2% !important;
+        }
+
+
+.row-blue {
+    background: #3081c3;
+    color: #fff;
+    font-weight: bold;
+}
+
+    .row-blue td {
+        padding: 10px;
+    }
+/*.Booked {background:#c73736;}
+.cell-yellow {background:#cfa511; color:#fff;}
+.cell-blue {background:#2e50ce; color:#fff;}*/
+.cell-gray {
+    background: #e8e8e8;
+    color: #333;
+    text-align: center;
+}
+
+.more {
+    background-color: #DEE1F2;
+    color: #25272E;
+    text-align: left;
+    cursor: pointer;
+}
+
+.booked {
+    cursor: pointer;
+    background-color: #D45C5C;
+    color: #fff;
+}
+
+.leave {
+    cursor: pointer;
+    background-color: #3EC48E;
+    color: #fff;
+}
+
+.unavailable {
+    cursor: pointer;
+    background-color: #2C73C4;
+    color: #fff;
+}
+
+.available {
+    cursor: pointer;
+    background-color: #2C73C4;
+    color: #fff;
+}
+
+.referred {
+    cursor: pointer;
+    background-color: #F0C149;
+    color: #fff;
+}
+
+.chart {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+}
+
+.viewform .popover-content {
+    background-color: white !important;
+    padding: 0px;
+    color: black !important;
+    border: none;
+    width: 500px;
+    box-shadow: 0 0 4px 2px rgba(0,0,0,0.2);
+    border-radius: 7px;
+}
+
+.viewform .popover {
+    width: 500px !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+    .viewform .popover .tooltip-title {
+        font-size: 20px;
+        color: #2F81C4;
+        padding-left: 10px;
+    }
+
+    .viewform .popover .tooltip-subtitle {
+        font-size: 13px;
+        padding-left: 5px;
+        padding-top: 4px;
+    }
+
+    .viewform .popover .modal-footer {
+        border-radius: 0px !important;
+        padding-top: 7px !important;
+        padding-bottom: 7px !important;
+    }
+
+    .viewform .popover .space-10 {
+        margin-top: 1px !important;
+    }
+
+.viewform .ng-valid .arrow:after {
+    border-top-color: #fff !important;
+}
+
+
+.social .ng-valid .arrow {
+    border-top-color: #aaa !important;
+}
+
+
+.background-green {
+    background: #81B000 !important;
+    color: #fff !important;
+}
+
+.background-blue {
+    background: #2f81c4 !important;
+    color: #FFFF00 !important;
+    text-align: center !important;
+}
+
+.background-gray {
+    background: #F6F6F6 !important;
+    color: #2F81C4 !important;
+}
+
+
+.social .popover-content {
+    background-color: white !important;
+    padding: 0px;
+    color: black !important;
+    border: none;
+    width: 200px;
+    box-shadow: 0 0 4px 2px rgba(0,0,0,0.2);
+    border-radius: 7px;
+}
+
+.social .popover {
+    width: 200px !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.social .popoversocial {
+    width: 200px !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+    .social .popoversocial .tooltip-title {
+        font-size: 20px;
+        color: #2F81C4;
+        padding-left: 10px;
+    }
+
+    .social .popoversocial .tooltip-subtitle {
+        font-size: 13px;
+        padding-left: 5px;
+        padding-top: 4px;
+    }
+
+    .social .popoversocial .modal-footer {
+        border-radius: 0px !important;
+        padding-top: 7px !important;
+        padding-bottom: 7px !important;
+    }
+
+    .social .popoversocial .space-10 {
+        margin-top: 1px !important;
+    }
+
+.social .ng-valid .arrow:after {
+    border-top-color: #fff !important;
+}
+
+.socialfacebook .arrow {
+    left: 31px !important;
+}
+
+.socialtwitter .arrow {
+    left: 51px !important;
+}
+
+.socialin .arrow {
+    left: 70px !important;
+}
+
+
+.social .ng-valid .arrow {
+    border-top-color: #aaa !important;
+}
+
+.socialtwitterpopover {
+    display: block !important;
+}
+
+.socialfacebookpopover {
+    display: block !important;
+}
+
+.socialinpopover {
+    display: block !important;
+}
+
+.popoversocial.bottom .arrow {
+    top: -11px;
+    left: 50%;
+    margin-left: -11px;
+    border-bottom-color: #999;
+    border-bottom-color: rgba(0,0,0,0.25);
+    border-top-width: 0;
+}
+
+.popoversocial .arrow {
+    border-width: 11px;
+}
+
+    .popoversocial .arrow, .popoversocial .arrow:after {
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 0;
+        border-color: transparent;
+        border-style: solid;
+    }
+
+.popoversocial.bottom {
+    margin-top: 10px;
+}
+
+.popoversocial {
+    z-index: 9999;
+}
+
+.popoversocial {
+    max-width: 390px;
+}
+
+.popoversocial {
+    border-radius: 0;
+    padding: 0;
+    border-color: #ccc;
+    border-width: 1px;
+    -webkit-box-shadow: 0 0 4px 2px rgba(0,0,0,0.2);
+    box-shadow: 0 0 4px 2px rgba(0,0,0,0.2);
+    color: #333;
+}
+
+.popoversocial {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1010;
+    display: none;
+    max-width: 276px;
+    padding: 1px;
+    text-align: left;
+    white-space: normal;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 6px;
+    -webkit-box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    background-clip: padding-box;
+}
+
+
+.calendar-schedule .date {
+    background: #e8e8e8;
+    color: #333;
+    text-align: center;
+    width: 32px;
+    height: 25px;
+    display: block;
+    padding-top: 2px;
+    position: absolute;
+}
+
+path.slice {
+    stroke-width: 2px;
+}
+
+polyline {
+    opacity: .3;
+    stroke: black;
+    stroke-width: 2px;
+    fill: none;
+}
+
+svg text.percent {
+    fill: white;
+    text-anchor: middle;
+    font-size: 12px;
+}
+
+.height-100 {
+    height: 108px;
+}
+
+.height-33 {
+    height: 33.33px;
+}
+
+.height-50 {
+    height: 54px;
+}
+
+.fc-header-title {
+    text-align: center;
+}
+
+.padding-right-18 {
+    padding-right: 18px;
+}
+
+.padding-left-18 {
+    padding-left: 18px;
+}
+
+.decoration-none {
+    text-decoration: none;
+}
+/* ************************************************** */
+
+
+/*!
+ * FullCalendar v1.6.4 Stylesheet
+ * Docs & License: http://arshaw.com/fullcalendar/
+ * (c) 2013 Adam Shaw
+ */
+
+.fc {
+    direction: ltr;
+    text-align: left;
+}
+
+    .fc table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    html .fc,
+    .fc table {
+        font-size: 1em;
+    }
+
+    .fc td,
+    .fc th {
+        padding: 0;
+        vertical-align: top;
+    }
+
+/* Header
+------------------------------------------------------------------------*/
+
+.fc-header td {
+    white-space: nowrap;
+}
+
+.fc-header-left {
+    width: 25%;
+    text-align: left;
+}
+
+.fc-header-center {
+    text-align: center;
+}
+
+.fc-header-right {
+    width: 25%;
+    text-align: right;
+}
+
+.fc-header-title {
+    display: inline-block;
+    vertical-align: top;
+}
+
+    .fc-header-title h2 {
+        margin-top: 0;
+        white-space: nowrap;
+    }
+
+.fc .fc-header-space {
+    padding-left: 10px;
+}
+
+.fc-header .fc-button {
+    margin-bottom: 1em;
+    vertical-align: top;
+}
+
+/* buttons edges butting together */
+
+.fc-header .fc-button {
+    margin-right: -1px;
+}
+
+.fc-header .fc-corner-right, /* non-theme */
+.fc-header .ui-corner-right { /* theme */
+    margin-right: 0; /* back to normal */
+}
+
+/* button layering (for border precedence) */
+
+.fc-header .fc-state-hover,
+.fc-header .ui-state-hover {
+    z-index: 2;
+}
+
+.fc-header .fc-state-down {
+    z-index: 3;
+}
+
+.fc-header .fc-state-active,
+.fc-header .ui-state-active {
+    z-index: 4;
+}
+
+/* Content
+------------------------------------------------------------------------*/
+
+.fc-content {
+    clear: both;
+    zoom: 1; /* for IE7, gives accurate coordinates for [un]freezeContentHeight */
+}
+
+.fc-view {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Cell Styles
+------------------------------------------------------------------------*/
+
+.fc-widget-header, /* <th>, usually */
+.fc-widget-content { /* <td>, usually */
+    border: 1px solid #ddd;
+}
+
+.fc-state-highlight { /* <td> today cell */ /* TODO: add .fc-today to <th> */
+    background: #fcf8e3;
+}
+
+.fc-cell-overlay { /* semi-transparent rectangle while dragging */
+    background: #bce8f1;
+    opacity: .3;
+    filter: alpha(opacity=30); /* for IE */
+}
+
+/* Buttons
+------------------------------------------------------------------------*/
+
+.fc-button {
+    position: relative;
+    display: inline-block;
+    padding: 0 .6em;
+    overflow: hidden;
+    height: 1.9em;
+    line-height: 1.9em;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.fc-state-default { /* non-theme */
+    border: 1px solid;
+}
+
+    .fc-state-default.fc-corner-left { /* non-theme */
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }
+
+    .fc-state-default.fc-corner-right { /* non-theme */
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+    }
+
+/*
+	Our default prev/next buttons use HTML entities like &lsaquo; &rsaquo; &laquo; &raquo;
+	and we'll try to make them look good cross-browser.
+*/
+
+.fc-text-arrow {
+    margin: 0 .1em;
+    font-size: 2em;
+    font-family: "Courier New", Courier, monospace;
+    vertical-align: baseline; /* for IE7 */
+}
+
+.fc-button-prev .fc-text-arrow,
+.fc-button-next .fc-text-arrow { /* for &lsaquo; &rsaquo; */
+    font-weight: bold;
+}
+
+/* icon (for jquery ui) */
+
+.fc-button .fc-icon-wrap {
+    position: relative;
+    float: left;
+    top: 50%;
+}
+
+.fc-button .ui-icon {
+    position: relative;
+    float: left;
+    margin-top: -50%;
+    *margin-top: 0;
+    *top: -50%;
+}
+
+/*
+  button states
+  borrowed from twitter bootstrap (http://twitter.github.com/bootstrap/)
+*/
+
+.fc-state-default {
+    background-color: #f5f5f5;
+    background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+    background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+    background-repeat: repeat-x;
+    border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    color: #333;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.fc-state-hover,
+.fc-state-down,
+.fc-state-active,
+.fc-state-disabled {
+    color: #333333;
+    background-color: #e6e6e6;
+}
+
+.fc-state-hover {
+    color: #333333;
+    text-decoration: none;
+    background-position: 0 -15px;
+    -webkit-transition: background-position 0.1s linear;
+    -moz-transition: background-position 0.1s linear;
+    -o-transition: background-position 0.1s linear;
+    transition: background-position 0.1s linear;
+}
+
+.fc-state-down,
+.fc-state-active {
+    background-color: #cccccc;
+    background-image: none;
+    outline: 0;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.fc-state-disabled {
+    cursor: default;
+    background-image: none;
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+    box-shadow: none;
+}
+
+/* Global Event Styles
+------------------------------------------------------------------------*/
+
+.fc-event-container > * {
+    z-index: 8;
+}
+
+.fc-event-container > .ui-draggable-dragging,
+.fc-event-container > .ui-resizable-resizing {
+    z-index: 9;
+}
+
+.fc-event {
+    border: 1px solid #3a87ad; /* default BORDER color */
+    background-color: #3a87ad; /* default BACKGROUND color */
+    color: #fff; /* default TEXT color */
+    font-size: .85em;
+    cursor: default;
+}
+
+a.fc-event {
+    text-decoration: none;
+}
+
+a.fc-event,
+.fc-event-draggable {
+    cursor: pointer;
+}
+
+.fc-rtl .fc-event {
+    text-align: right;
+}
+
+.fc-event-inner {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.fc-event-time,
+.fc-event-title {
+    padding: 0 1px;
+}
+
+.fc .ui-resizable-handle {
+    display: block;
+    position: absolute;
+    z-index: 99999;
+    overflow: hidden; /* hacky spaces (IE6/7) */
+    font-size: 300%; /* */
+    line-height: 50%; /* */
+}
+
+/* Horizontal Events
+------------------------------------------------------------------------*/
+
+.fc-event-hori {
+    border-width: 1px 0;
+    margin-bottom: 1px;
+}
+
+.fc-ltr .fc-event-hori.fc-event-start,
+.fc-rtl .fc-event-hori.fc-event-end {
+    border-left-width: 1px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.fc-ltr .fc-event-hori.fc-event-end,
+.fc-rtl .fc-event-hori.fc-event-start {
+    border-right-width: 1px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+/* resizable */
+
+.fc-event-hori .ui-resizable-e {
+    top: 0 !important; /* importants override pre jquery ui 1.7 styles */
+    right: -3px !important;
+    width: 7px !important;
+    height: 100% !important;
+    cursor: e-resize;
+}
+
+.fc-event-hori .ui-resizable-w {
+    top: 0 !important;
+    left: -3px !important;
+    width: 7px !important;
+    height: 100% !important;
+    cursor: w-resize;
+}
+
+.fc-event-hori .ui-resizable-handle {
+    _padding-bottom: 14px; /* IE6 had 0 height */
+}
+
+/* Reusable Separate-border Table
+------------------------------------------------------------*/
+
+table.fc-border-separate {
+    border-collapse: separate;
+}
+
+.fc-border-separate th,
+.fc-border-separate td {
+    border-width: 1px 0 0 1px;
+}
+
+    .fc-border-separate th.fc-last,
+    .fc-border-separate td.fc-last {
+        border-right-width: 1px;
+    }
+
+.fc-border-separate tr.fc-last th,
+.fc-border-separate tr.fc-last td {
+    border-bottom-width: 1px;
+}
+
+.fc-border-separate tbody tr.fc-first td,
+.fc-border-separate tbody tr.fc-first th {
+    border-top-width: 0;
+}
+
+/* Month View, Basic Week View, Basic Day View
+------------------------------------------------------------------------*/
+
+.fc-grid th {
+    text-align: center;
+}
+
+.fc .fc-week-number {
+    width: 22px;
+    text-align: center;
+}
+
+    .fc .fc-week-number div {
+        padding: 0 2px;
+    }
+
+.fc-grid .fc-day-number {
+    float: right;
+    padding: 0 2px;
+}
+
+.fc-grid .fc-other-month .fc-day-number {
+    opacity: 0.3;
+    filter: alpha(opacity=30); /* for IE */
+    /* opacity with small font can sometimes look too faded
+	   might want to set the 'color' property instead
+	   making day-numbers bold also fixes the problem */
+}
+
+.fc-grid .fc-day-content {
+    clear: both;
+    padding: 2px 2px 1px; /* distance between events and day edges */
+}
+
+/* event styles */
+
+.fc-grid .fc-event-time {
+    font-weight: bold;
+}
+
+/* right-to-left */
+
+.fc-rtl .fc-grid .fc-day-number {
+    float: left;
+}
+
+.fc-rtl .fc-grid .fc-event-time {
+    float: right;
+}
+
+/* Agenda Week View, Agenda Day View
+------------------------------------------------------------------------*/
+
+.fc-agenda table {
+    border-collapse: separate;
+}
+
+.fc-agenda-days th {
+    text-align: center;
+}
+
+.fc-agenda .fc-agenda-axis {
+    width: 50px;
+    padding: 0 4px;
+    vertical-align: middle;
+    text-align: right;
+    white-space: nowrap;
+    font-weight: normal;
+}
+
+.fc-agenda .fc-week-number {
+    font-weight: bold;
+}
+
+.fc-agenda .fc-day-content {
+    padding: 2px 2px 1px;
+}
+
+/* make axis border take precedence */
+
+.fc-agenda-days .fc-agenda-axis {
+    border-right-width: 1px;
+}
+
+.fc-agenda-days .fc-col0 {
+    border-left-width: 0;
+}
+
+/* all-day area */
+
+.fc-agenda-allday th {
+    border-width: 0 1px;
+}
+
+.fc-agenda-allday .fc-day-content {
+    min-height: 34px; /* TODO: doesnt work well in quirksmode */
+    _height: 34px;
+}
+
+/* divider (between all-day and slots) */
+
+.fc-agenda-divider-inner {
+    height: 2px;
+    overflow: hidden;
+}
+
+.fc-widget-header .fc-agenda-divider-inner {
+    background: #eee;
+}
+
+/* slot rows */
+
+.fc-agenda-slots th {
+    border-width: 1px 1px 0;
+}
+
+.fc-agenda-slots td {
+    border-width: 1px 0 0;
+    background: none;
+}
+
+    .fc-agenda-slots td div {
+        height: 20px;
+    }
+
+.fc-agenda-slots tr.fc-slot0 th,
+.fc-agenda-slots tr.fc-slot0 td {
+    border-top-width: 0;
+}
+
+.fc-agenda-slots tr.fc-minor th,
+.fc-agenda-slots tr.fc-minor td {
+    border-top-style: dotted;
+}
+
+    .fc-agenda-slots tr.fc-minor th.ui-widget-header {
+        *border-top-style: solid; /* doesn't work with background in IE6/7 */
+    }
+
+/* Vertical Events
+------------------------------------------------------------------------*/
+
+.fc-event-vert {
+    border-width: 0 1px;
+}
+
+    .fc-event-vert.fc-event-start {
+        border-top-width: 1px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+
+    .fc-event-vert.fc-event-end {
+        border-bottom-width: 1px;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+
+    .fc-event-vert .fc-event-time {
+        white-space: nowrap;
+        font-size: 10px;
+    }
+
+    .fc-event-vert .fc-event-inner {
+        position: relative;
+        z-index: 2;
+    }
+
+    .fc-event-vert .fc-event-bg { /* makes the event lighter w/ a semi-transparent overlay  */
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        opacity: .25;
+        filter: alpha(opacity=25);
+    }
+
+.fc .ui-draggable-dragging .fc-event-bg, /* TODO: something nicer like .fc-opacity */
+.fc-select-helper .fc-event-bg {
+    display: none\9; /* for IE6/7/8. nested opacity filters while dragging don't work */
+}
+
+/* resizable */
+
+.fc-event-vert .ui-resizable-s {
+    bottom: 0 !important; /* importants override pre jquery ui 1.7 styles */
+    width: 100% !important;
+    height: 8px !important;
+    overflow: hidden !important;
+    line-height: 8px !important;
+    font-size: 11px !important;
+    font-family: monospace;
+    text-align: center;
+    cursor: s-resize;
+}
+
+.fc-agenda .ui-resizable-resizing { /* TODO: better selector */
+    _overflow: hidden;
+}
+
+
+btn-width {
+    min-width: 35px;
+}
+
+.ml10 {
+    margin-left: 10px;
+}
+
+
+.modal-content {
+    border-radius: 4px;
+    -webkit-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+    box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+}
+
+.modal-footer {
+    padding-top: 12px;
+    padding-bottom: 14px;
+    border-top-color: #ccc;
+    border-radius: 0px 0px 4px 4px;
+    background-color: #fff;
+    margin-top: 0px;
+}
+
+.modal-header {
+    padding: 3px 15px !important;
+    background: #16806c;
+    color: #fff;
+    border-radius: 1px 1px 0px 0px;
+}
+
+    .modal-header .close {
+        font-size: 18px !important;
+        text-shadow: none;
+        color: #fff;
+        margin-top: 2px;
+    }
+
+    .modal-header h4 a {
+        color: #fff !important;
+    }
+
+        .modal-header h4 a:hover {
+            color: #fff !important;
+        }
+
+
+
+/* *********  rx-tree *********** */
+.rx-tree {
+    cursor: pointer;
+    margin-left: 7px;
+}
+
+    .rx-tree .home-icon {
+        margin-left: 4px;
+        margin-right: 2px;
+        font-size: 15px;
+        position: relative;
+        top: 0;
+        color: #F3E2A9;
+        text-shadow: 1px 1px #D9C4A6;
+    }
+/* ******************************* */
+
+.selected-date-class {
+    background-image: -webkit-linear-gradient(top,#9231A1,#C67EE8);
+    color: #FDFCFC;
+}
+
+    .selected-date-class:hover {
+        background-image: -webkit-linear-gradient(top,#9231A1,#C67EE8) !important;
+        color: black;
+        opacity: 0.5;
+    }
+
+.cursor {
+    cursor: pointer;
+}
+
+.margin-left-5 {
+    margin-left: 5px;
+}
+
+.margin-bottom-5 {
+    margin-bottom: 5px;
+}
+
+.width-900 {
+    width: 900px;
+}
+
+.background-header {
+    background-color: #222 !important;
+    border-color: #080808 !important;
+    color: white !important;
+}
+
+.background-black-header {
+    background-color: #222 !important;
+    border-color: #080808 !important;
+    color: white !important;
+}
+
+    .background-black-header:hover,
+    .background-black-header:focus {
+        background-color: #222 !important;
+        border-color: #080808 !important;
+        text-decoration: none;
+        cursor: pointer;
+        opacity: 0.8;
+        filter: alpha(opacity=50);
+    }
+
+.btn-width {
+    min-width: 35px;
+}
+
+.selectedRow {
+    background-color: #B7D1EE;
+    color: #2F81C4;
+}
+
+.selectedRedRow {
+    background-color: #B7D1EE;
+    color: white;
+}
+
+.tree-icon {
+    font-family: none;
+    background-color: #fff;
+    border: 1px solid #8baebf;
+    box-sizing: content-box;
+    height: 11px;
+    line-height: 10px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 1px;
+    top: -1px;
+    margin-right: 5px;
+}
+
+#rxhtmlColumn table tr td {
+    padding: 0px;
+    line-height: 1.50;
+    border-top: none;
+}
+
+#rxcontactColumn table tr td {
+    padding: 0px;
+    line-height: 1.50;
+    border-top: none;
+}
+
+td > div > .rx-pipeicon {
+    border-right: 1px solid black;
+    margin: 0px .25em 0px .25em;
+    padding: 0px .25em 0px .25em;
+}
+
+
+    td > div > .rx-pipeicon:last-of-type {
+        border-right: 0px;
+        margin: 0px .25em 0px .25em;
+        padding: 0px .25em 0px .25em;
+    }
+
+/* custom inclusion of right, left and below tabs */
+
+.tabs-right > .nav-tabs,
+.tabs-left > .nav-tabs {
+    border-bottom: 0;
+}
+
+.tab-content > .tab-pane,
+.pill-content > .pill-pane {
+    display: none;
+}
+
+.tab-content > .active,
+.pill-content > .active {
+    display: block;
+}
+
+.tabs-left > .nav-tabs > li,
+.tabs-right > .nav-tabs > li {
+    float: none;
+}
+
+    .tabs-left > .nav-tabs > li > a,
+    .tabs-right > .nav-tabs > li > a {
+        min-width: 74px;
+        margin-right: 0;
+        margin-bottom: 3px;
+    }
+
+.tabs-left > .nav-tabs {
+    float: left;
+    margin-right: 19px;
+    border-right: 1px solid #ddd;
+}
+
+    .tabs-left > .nav-tabs > li > a {
+        margin-right: -1px;
+        -webkit-border-radius: 4px 0 0 4px;
+        -moz-border-radius: 4px 0 0 4px;
+        border-radius: 4px 0 0 4px;
+    }
+
+        .tabs-left > .nav-tabs > li > a:hover,
+        .tabs-left > .nav-tabs > li > a:focus {
+            border-color: #eeeeee #dddddd #eeeeee #eeeeee;
+        }
+
+    .tabs-left > .nav-tabs .active > a,
+    .tabs-left > .nav-tabs .active > a:hover,
+    .tabs-left > .nav-tabs .active > a:focus {
+        border-color: #ddd transparent #ddd #ddd;
+        *border-right-color: #ffffff;
+    }
+
+.tabs-right > .nav-tabs {
+    float: right;
+    margin-left: 19px;
+    border-left: 1px solid #ddd;
+}
+
+    .tabs-right > .nav-tabs > li > a {
+        margin-left: -1px;
+        -webkit-border-radius: 0 4px 4px 0;
+        -moz-border-radius: 0 4px 4px 0;
+        border-radius: 0 4px 4px 0;
+    }
+
+        .tabs-right > .nav-tabs > li > a:hover,
+        .tabs-right > .nav-tabs > li > a:focus {
+            border-color: #eeeeee #eeeeee #eeeeee #dddddd;
+        }
+
+    .tabs-right > .nav-tabs .active > a,
+    .tabs-right > .nav-tabs .active > a:hover,
+    .tabs-right > .nav-tabs .active > a:focus {
+        border-color: #ddd #ddd #ddd transparent;
+        *border-left-color: #ffffff;
+    }
+
+.no-padding-left {
+    padding-left: 0px !important;
+}
+
+.modal-dialog-700 {
+    width: 700px !important;
+}
+
+.modal-dialog-800 {
+    width: 800px !important;
+}
+
+.userCSS {
+    height: 50px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 0 !important;
+    vertical-align: middle !important;
+}
+
+.productCSS {
+    height: 50px;
+    font-size:16px;
+    font-weight:700;
+    text-align: justify;
+    padding: 10px !important;
+    vertical-align: middle !important;
+
+}
+
+.myImageClass {
+    height: 100px;
+    width: 100px;
+}
+
+.headingCenter {
+    color: white;
+    background-color: #5fc2af;
+     font-size:17px;
+     font-weight:700;
+}
+
+    .headingCenter .ng-binding {
+        float: none !important;
+        text-align: center !important;
+        background-color: #5fc2af
+    }
+

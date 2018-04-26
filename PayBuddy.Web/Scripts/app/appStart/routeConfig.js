@@ -1,0 +1,65 @@
+﻿var injector = angular.injector(['rx']);
+//var rxEncoder = injector.get('rxEncode');
+app.config(['$routeProvider', 'tempConfig', '$locationProvider', function ($routeProvider, tempConfig, $locationProvider) {
+    $routeProvider.when(tempConfig.hashurl.signIn, {
+        controller: tempConfig.controllers.userAuthenticationCtrl,
+        templateUrl: tempConfig.getTemplate("User/SignIn/SignIn")
+    }).when(tempConfig.hashurl.signUp, {
+        controller: tempConfig.controllers.userCtrl,
+        templateUrl: tempConfig.getTemplate("User/SignUp/SignUp")
+    }).when(tempConfig.hashurl.forgotPassword, {
+        controller: tempConfig.controllers.userAuthenticationCtrl,
+        templateUrl: tempConfig.getTemplate("User/ForgotPassword/ForgotPassword")
+    }).when(tempConfig.hashurl.dashboard, {
+        controller: tempConfig.controllers.userCtrl,
+        templateUrl: tempConfig.getTemplate("User/Dashboard/Dashboard")
+    }).when(tempConfig.hashurl.putUser, {
+        controller: tempConfig.controllers.userCtrl,
+        templateUrl: tempConfig.getTemplate("User/PutUser/PutUser")
+    }).when(tempConfig.hashurl.userList, {
+        controller: tempConfig.controllers.adminCtrl,
+        templateUrl: tempConfig.getTemplate("Admin/Users/UserList/UserList")
+    }).when(tempConfig.hashurl.viewUser, {
+        controller: tempConfig.controllers.adminCtrl,
+        templateUrl: tempConfig.getTemplate("Admin/Users/ViewUser/ViewUser")
+    }).when(tempConfig.hashurl.productList, {
+        controller: tempConfig.controllers.adminCtrl,
+        templateUrl: tempConfig.getTemplate("Admin/Products/ProductList/ProductList")
+    }).when(tempConfig.hashurl.postProduct, {
+        controller: tempConfig.controllers.adminCtrl,
+        templateUrl: tempConfig.getTemplate("Admin/Products/PostProduct/PostProduct")
+    }).when(tempConfig.hashurl.putProduct, {
+        controller: tempConfig.controllers.adminCtrl,
+        templateUrl: tempConfig.getTemplate("Admin/Products/PutProduct/PutProduct")
+    }).when(tempConfig.hashurl.viewProduct, {
+        controller: tempConfig.controllers.adminCtrl,
+        templateUrl: tempConfig.getTemplate("Admin/Products/ViewProduct/ViewProduct")
+    }).when(tempConfig.hashurl.productCategory, {
+        controller: tempConfig.controllers.cartCtrl,
+        templateUrl: tempConfig.getTemplate("User/Products/Categories/Categories")
+    }).when(tempConfig.hashurl.productSubCategory, {
+        controller: tempConfig.controllers.cartCtrl,
+        templateUrl: tempConfig.getTemplate("User/Products/SubCategories/SubCategories")
+    }).when(tempConfig.hashurl.productBrand, {
+        controller: tempConfig.controllers.cartCtrl,
+        templateUrl: tempConfig.getTemplate("User/Products/Brands/Brands")
+    }).when(tempConfig.hashurl.shoppingCart, {
+        controller: tempConfig.controllers.cartCtrl,
+        templateUrl: tempConfig.getTemplate("User/ShoppingCart/ShoppingCart")
+    }).when(tempConfig.hashurl.reviewProduct, {
+        controller: tempConfig.controllers.cartCtrl,
+        templateUrl: tempConfig.getTemplate("User/ReviewProduct/ReviewProduct")
+    }).when(tempConfig.hashurl.balance, {
+        controller: tempConfig.controllers.userCtrl,
+        templateUrl: tempConfig.getTemplate("User/Balance/Balance")
+    }).when(tempConfig.hashurl.checkOut, {
+        controller: tempConfig.controllers.checkOutCtrl,
+        templateUrl: tempConfig.getTemplate("User/CheckOut/CheckOut")
+    }).when(tempConfig.hashurl.thankYou, {
+        controller: tempConfig.controllers.checkOutCtrl,
+        templateUrl: tempConfig.getTemplate("User/ThankYou/ThankYou")
+    }).when(tempConfig.hashurl.addShipmentAddress, {
+        controller: tempConfig.controllers.cartCtrl,
+        templateUrl: tempConfig.getTemplate("User/ReviewProduct/AddShipmentAddress")
+    });
+}]);

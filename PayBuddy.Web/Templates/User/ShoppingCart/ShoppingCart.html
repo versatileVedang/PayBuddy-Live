@@ -1,0 +1,57 @@
+﻿<link href="../../../Content/Cart.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+<div class="row" ng-controller="cartCtrl" ng-init="getProducts()" style="margin-top:100px;">
+    <div class="col-lg-8  col-lg-offset-2">
+        <center><h3><strong>Shopping Cart</strong></h3></center><br />
+        <table id="cart" class="table table-hover table-condensed">
+            <thead>
+                <tr style="background: #5fc2af ">
+                    <th style="font-size:20px; width:35%; padding-left:50px;">Product</th>
+                    <th style="font-size:20px; width:15%; text-align:center;">Price</th>
+                    <th style="font-size:20px; width:13%; text-align:center;">Quantity</th>
+                    <th style="font-size:20px; width:12%; text-align:center;">Discount</th>
+                    <th style="font-size:20px; width:15%; text-align:center;">Subtotal</th>
+                    <th style="font-size:20px; width:10%; text-align:center;">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in cartList | orderBy  : 'cartId' ">
+                    <td data-th="Product">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <img src="data:image/png;base64,{{item.productImageBaseString}}" height="85" width="85" style="padding-top:2px;" />
+                            </div>
+                            <div class="col-lg-8">
+                               <h4><strong>{{item.productName}}</strong></h4>
+                            </div>
+                        </div>
+                    </td>
+                    <td data-th="Price">&#8377;{{item.cost}}</td>
+                    <td data-th="Quantity">
+                       <center><input type="number" ng-model="item.quantity" class="form-control text-center" value="1" min="1" style="width:60px;" ng-change="getSubTotal(item)"></center>
+                    </td>
+                    <td data-th="Discount">{{item.discount}} %</td>
+                    <td data-th="Subtotal" class="text-center">&#8377; {{item.subTotal | number:2}}</td>
+                    <td class="actions" data-th="">
+                        <button class="btn btn-danger btn-sm" ng-click="removeItem(item)"><i class="fa fa-trash-o"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr class="visible-xs"></tr>
+                <tr>
+                    <td colspan="4" class="hidden-xs"></td>
+                    <td class="hidden-xs  text-success" style="text-align:center; font-size:18px;"><strong>Total &#8377;{{total | number:2}}</strong></td>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="row">
+            <div class="col-lg-5">
+                <a href="User#/productSubCategory/1" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a>
+            </div>
+            <div class="col-lg-2 col-lg-offset-5">
+                <a href="" class="btn btn-warning" ng-click="refresh(cartList)">Review Products <i class="fa fa-angle-right"></i></a>
+            </div>
+        </div>
+    </div>
+</div>

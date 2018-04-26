@@ -1,0 +1,43 @@
+﻿<div id="myModal" class="modal-dialog" role="dialog" ng-init="initViewUser()" ng-controller="adminCtrl">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <center><h4 class="modal-title">View User</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="userId" class="col-md-4">UserId:</label>
+                    <label id="userId" class="col-md-8" ng-bind="user.userId"></label>
+                </div><br /><br />
+                <div class="form-group">
+                    <label for="fname" class="col-md-4">First Name:</label>
+                    <label id="fname" class="col-md-8" ng-bind="user.firstName"></label>
+                </div><br /><br />
+                <div class="form-group">
+                    <label for="lname" class="col-md-4">Last Name:</label>
+                    <label id="lname" class="col-md-8" ng-bind="user.lastName"></label>
+                </div><br /><br />
+                <div class="form-group">
+                    <label for="email" class="col-md-4">Email:</label>
+                    <label id="email" class="col-md-8" ng-bind="user.email"></label>
+                </div><br /><br />
+                <div class="form-group">
+                    <label for="contact" class="col-md-4">Contact:</label>
+                    <label id="contact" class="col-md-8" ng-bind="user.contact"></label>
+                </div><br /><br />
+                <div class="form-group">
+                    <label for="address" class="col-md-4">Address:</label>
+                    <label id="address" class="col-md-8" ng-bind="user.address"></label>
+                </div><br /><br />
+                <div class="form-group">
+                    <label for="gender" class="col-md-4">Gender:</label>
+                    <label id="gender" class="col-md-8" ng-bind="user.gender"></label>
+                </div><br />
+            </div>
+            <div class="modal-footer">
+               <center><button ng-click="closeView()" type="button" class="btn btn-primary" data-dismiss="modal">Close</button></center>
+            </div>
+        </div>
+    </div>
+</div>
+
